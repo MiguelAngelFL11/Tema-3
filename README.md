@@ -51,6 +51,6 @@ En este documento vamos a ver sobre los distintos metodos los cuales son:
 
 <h2 align = "center"> <font font face = "forte"> <a name="Métodos de solución de Sistemas de Ecuaciones"> Métodos de solución de Sistemas de Ecuaciones  </front> </h2>
 
-<h2 align = "center"> <font font face = "forte">  1. Bisección </h2>
+<h2 align = "center"> <font font face = "forte">  1.- Método de Eliminacion Gaussiana. </h2>
 
 
