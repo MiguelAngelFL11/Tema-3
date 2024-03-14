@@ -53,29 +53,72 @@ En este documento vamos a ver sobre los distintos metodos los cuales son:
 
 <h3 align = "center"> <font font face = "forte">  1.1 Método de Eliminacion Gaussiana. </h3>
 
-<h3> <font font face = "arial"> Descripción:: </h3>
+<h3> <font font face = "arial"> Descripción </h2>
 
 El método de eliminación gaussiana es un algoritmo utilizado para resolver sistemas de ecuaciones lineales. Consiste en realizar una serie de operaciones elementales sobre las filas de una matriz aumentada que representa el sistema de ecuaciones, con el objetivo de convertirla en una forma escalonada o triangular superior. Una vez que la matriz está en esta forma, se puede resolver fácilmente el sistema mediante sustitución hacia atrás.
 
-<h3> <font font face = "arial">Pseudocódigo del Método de Bisección:</h3>
+<h3> <font font face = "arial">Pseudocódigo del Método de Bisección</h3>
   
-Input: Una matriz aumentada A de tamaño (n x n+1)
+Input: Una matriz aumentada A de tamaño (n x n+1) -
 Output: Las soluciones del sistema de ecuaciones
 
 Para k desde 1 hasta n-1:
     Para i desde k+1 hasta n:
         factor = A[i][k] / A[k][k]  
         Para j desde k hasta n+1:
-            A[i][j] = A[i][j] - factor * A[k][j]  # Realiza la eliminación
+            A[i][j] = A[i][j] - factor * A[k][j] 
 
 Para i desde n hasta 1:
     x[i] = A[i][n+1] / A[i][i]  
     Para j desde i+1 hasta n:
         x[i] = x[i] - A[i][j] * x[j] / A[i][i]
 
-Return x  # Devuelve las soluciones
+Return x  
 
+<h3> <font font face = "arial">Ejemplo del Método de Bisección en código.</h3>
 
+public class GaussianElimination {
+    
+    public static double[] solve(double[][] A) {
+        int n = A.length;
+        double[] x = new double[n]; // Vector para almacenar las soluciones
+        
+        // Eliminación gaussiana
+        for (int k = 0; k < n - 1; k++) {
+            for (int i = k + 1; i < n; i++) {
+                double factor = A[i][k] / A[k][k];
+                for (int j = k; j < n + 1; j++) {
+                    A[i][j] -= factor * A[k][j];
+                }
+            }
+        }
+        
+        // Resolución del sistema triangular superior
+        for (int i = n - 1; i >= 0; i--) {
+            x[i] = A[i][n] / A[i][i];
+            for (int j = i + 1; j < n; j++) {
+                x[i] -= A[i][j] * x[j] / A[i][i];
+            }
+        }
+        
+        return x;
+    }
+
+    public static void main(String[] args) {
+        double[][] A = {
+            {2, 3, -1, 1},
+            {4, 4, -3, 5},
+            {2, -1, 2, 7}
+        };
+
+        double[] soluciones = solve(A);
+
+        System.out.println("Soluciones:");
+        for (int i = 0; i < soluciones.length; i++) {
+            System.out.println("x[" + i + "] = " + soluciones[i]);
+        }
+    }
+}
 
 <h3 align = "center"> <font font face = "forte">  1.2 Método de Gauss Jordania. </h3>
 
