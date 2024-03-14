@@ -208,7 +208,47 @@ public class GaussJordan {
 
 <h3 align = "center"> <font font face = "forte">  1.3 Método de Gauss Seidel. </h3>
 
+<h3> <font font face = "arial"> Descripción </h2>
 
+El método de Gauss-Seidel es un algoritmo iterativo utilizado para resolver sistemas de ecuaciones lineales. A diferencia de los métodos directos como la eliminación gaussiana, el método de Gauss-Seidel es un método iterativo que mejora iterativamente una aproximación inicial a la solución hasta alcanzar una solución aceptable.
+
+<h3> <font font face = "arial">Pseudocódigo del Método de Gauss Seidel.</h3>
+
+Input: Una matriz A de tamaño (n x n), un vector b de tamaño n, una aproximación inicial x^(0), un número máximo de iteraciones max_iter, y un criterio de convergencia tol.
+Output: La aproximación final x^(k) que resuelve el sistema Ax = b o un mensaje de error si no se alcanza la convergencia.
+
+Inicializar un vector x de tamaño n para almacenar la aproximación actual.
+Inicializar un vector x_prev de tamaño n para almacenar la aproximación anterior.
+Inicializar la variable iter para contar el número de iteraciones realizadas.
+Inicializar la variable error para almacenar el error relativo.
+
+Mientras iter < max_iter:
+    Para i desde 0 hasta n-1:
+        x_prev[i] = x[i] 
+        
+        suma1 = 0
+        Para j desde 0 hasta i-1:
+            suma1 += A[i][j] * x[j] 
+
+        suma2 = 0
+        Para j desde i+1 hasta n-1:
+            suma2 += A[i][j] * x_prev[j] 
+
+        x[i] = (1 / A[i][i]) * (b[i] - suma1 - suma2)  
+
+    error = |x[0] - x_prev[0]|
+    Para i desde 1 hasta n-1:
+        error = max(error, |x[i] - x_prev[i]|)
+
+    Si error < tol:
+        Return x  # Se alcanzó la convergencia
+
+    iter += 1
+
+Return "No se alcanzó la convergencia después de max_iter iteraciones."
+
+<h3> <font font face = "arial">Ejemplo del Método deMétodo de Gauss Seidel en código.</h3>
+  
 <h3 align = "center"> <font font face = "forte">  1.4 Método de Jacobi. </h3>
 
 
