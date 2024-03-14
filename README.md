@@ -247,8 +247,74 @@ Mientras iter < max_iter:
 
 Return "No se alcanzó la convergencia después de max_iter iteraciones."
 
-<h3> <font font face = "arial">Ejemplo del Método deMétodo de Gauss Seidel en código.</h3>
-  
+<h3> <font font face = "arial">Ejemplo del Método de Gauss Seidel en código.</h3>
+  public class GaussSeidel {
+
+    public static double[] solve(double[][] A, double[] b, double[] x0, int maxIter, double tol) {
+        int n = A.length;
+        double[] x = new double[n];
+        double[] xPrev = new double[n];
+        double error = Double.MAX_VALUE;
+        int iter = 0;
+
+        while (iter < maxIter && error > tol) {
+            // Almacenar la aproximación anterior
+            System.arraycopy(x, 0, xPrev, 0, n);
+
+            // Calcular la nueva aproximación para cada componente de x
+            for (int i = 0; i < n; i++) {
+                double sum1 = 0;
+                for (int j = 0; j < i; j++) {
+                    sum1 += A[i][j] * x[j];
+                }
+
+                double sum2 = 0;
+                for (int j = i + 1; j < n; j++) {
+                    sum2 += A[i][j] * xPrev[j];
+                }
+
+                x[i] = (1 / A[i][i]) * (b[i] - sum1 - sum2);
+            }
+
+            // Calcular el error relativo
+            error = Math.abs(x[0] - xPrev[0]);
+            for (int i = 1; i < n; i++) {
+                error = Math.max(error, Math.abs(x[i] - xPrev[i]));
+            }
+
+            iter++;
+        }
+
+        if (error <= tol) {
+            return x; // Se alcanzó la convergencia
+        } else {
+            System.out.println("No se alcanzó la convergencia después de " + maxIter + " iteraciones.");
+            return null;
+        }
+    }
+
+    public static void main(String[] args) {
+        double[][] A = {
+            {10, -1, 2},
+            {-1, 11, -1},
+            {2, -1, 10}
+        };
+        double[] b = {6, 25, -11};
+        double[] x0 = {0, 0, 0};
+        int maxIter = 1000;
+        double tol = 1e-6;
+
+        double[] soluciones = solve(A, b, x0, maxIter, tol);
+
+        if (soluciones != null) {
+            System.out.println("Soluciones:");
+            for (int i = 0; i < soluciones.length; i++) {
+                System.out.println("x[" + i + "] = " + soluciones[i]);
+            }
+        }
+    }
+}
+
 <h3 align = "center"> <font font face = "forte">  1.4 Método de Jacobi. </h3>
 
 
