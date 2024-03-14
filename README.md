@@ -1,8 +1,7 @@
 <h1> <font color = "darkred" size="+5" font face = "cooper black"> <b> <i> Tema 3: Métodos de solución de Sistemas de Ecuaciones </i> </b> </font> </h1>
 
 <h4 aling = "center"> <font color = "darkred" size="+5" font face = "cooper black"> <b> <i> Integrantes </i> </b> </font> </h4>
- *José Antonio Guerrero Lazcano
- *
+
 
 <h3 align = "center"> <font color = "darkorange" size = "+6"  font face = "bauhaus 93">  Indice </font> </h3>
 <header> <font color = "red" size="+1" font face = "aharoni">
