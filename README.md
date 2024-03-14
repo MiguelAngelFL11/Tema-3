@@ -57,7 +57,7 @@ En este documento vamos a ver sobre los distintos metodos los cuales son:
 
 El método de eliminación gaussiana es un algoritmo utilizado para resolver sistemas de ecuaciones lineales. Consiste en realizar una serie de operaciones elementales sobre las filas de una matriz aumentada que representa el sistema de ecuaciones, con el objetivo de convertirla en una forma escalonada o triangular superior. Una vez que la matriz está en esta forma, se puede resolver fácilmente el sistema mediante sustitución hacia atrás.
 
-<h3> <font font face = "arial">Pseudocódigo del Método de Bisección</h3>
+<h3> <font font face = "arial">Pseudocódigo del Método de Eliminacion Gaussiana.</h3>
   
 Input: Una matriz aumentada A de tamaño (n x n+1) -
 Output: Las soluciones del sistema de ecuaciones
@@ -75,7 +75,7 @@ Para i desde n hasta 1:
 
 Return x  
 
-<h3> <font font face = "arial">Ejemplo del Método de Bisección en código.</h3>
+<h3> <font font face = "arial">Ejemplo del Método de Eliminacion Gaussiana en código.</h3>
 
 public class GaussianElimination {
     
@@ -121,6 +121,42 @@ public class GaussianElimination {
 }
 
 <h3 align = "center"> <font font face = "forte">  1.2 Método de Gauss Jordania. </h3>
+  
+<h3> <font font face = "arial"> Descripción </h2>
+
+El método de Gauss-Jordan es una variante del método de eliminación gaussiana que busca obtener una matriz en forma escalonada reducida por filas, también conocida como forma escalonada reducida. Esta forma simplificada facilita la resolución de sistemas de ecuaciones lineales y la obtención de la inversa de una matriz.
+
+<h3> <font font face = "arial">Pseudocódigo del Método de Gauss Jordania.</h3>
+Input: Una matriz aumentada A de tamaño (n x n+1) -
+Output: Las soluciones del sistema de ecuaciones
+
+Para k desde 0 hasta n-1:
+    Para i desde 0 hasta n-1:
+        Si i ≠ k:
+            factor = A[i][k] / A[k][k]
+            Para j desde k hasta n+1:
+                A[i][j] = A[i][j] - factor * A[k][j]
+    factor = A[k][k]
+    Para j desde k hasta n+1:
+        A[k][j] = A[k][j] / factor
+
+Para k desde n-1 hasta 0:
+    Para i desde n-1 hasta 0:
+        Si i ≠ k:
+            factor = A[i][k] / A[k][k]
+            Para j desde k hasta n+1:
+                A[i][j] = A[i][j] - factor * A[k][j]
+
+
+Para i desde 0 hasta n-1:
+    soluciones[i] = A[i][n]
+
+Return soluciones
+
+
+<h3> <font font face = "arial">Ejemplo del Método de Gauss Jordania. en código.</h3>
+
+
 
 
 <h3 align = "center"> <font font face = "forte">  1.3 Método de Gauss Seidel. </h3>
