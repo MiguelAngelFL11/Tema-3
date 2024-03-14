@@ -32,7 +32,19 @@
 En este documento vamos a ver sobre los distintos metodos los cuales son:
                                 <li>1.- Método de Eliminacion Gaussiana. </a> </li>
                                 <li>2.- Método de Gauss Jordania. </a> </li>
-                                <li>3.- Método de de Gauss Seidel. </a> </li> 
+                                <li>3.- Método de Gauss Seidel. </a> </li> 
                                 <li>4.- Método de Jacobi. </a> </li> 
 
+<h3> <font font face = "forte"> <a name="TEMARIO"> TEMARIO  </a> </h3>
+
+   
+  2.1 Método de Eliminacion Gaussiana.
+   
+  2.2 Método de Gauss Jordania.  
+  
+  2.3 Método de Gauss Seidel.   
+
+  2.4 Método de Jacobi.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
