@@ -35,7 +35,7 @@ En este documento vamos a ver sobre los distintos metodos los cuales son:
                                 <li>3.- Método de Gauss Seidel. </a> </li> 
                                 <li>4.- Método de Jacobi. </a> </li> 
 
-<h3> <font font face = "forte"> <a name="TEMARIO"> TEMARIO  </a> </h3>
+<h3 align = "center"> <font font face = "forte"> <a name="Temario"> TEMARIO  </a> </h3>
 
    
   2.1 Método de Eliminacion Gaussiana.
