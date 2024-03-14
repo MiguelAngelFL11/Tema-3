@@ -10,12 +10,12 @@
                             <ul class="subindice"> 
                                 <li> <a href="#TEMARIO"> TEMARIO. </a> </li>  
                             </ul>
-                      <li> <a href="#Métodos de solución de Sistemas de Ecuaciones"> MMétodos de solución de Sistemas de Ecuaciones. </a> <br> </li>
+                      <li> <a href="#Métodos de solución de Sistemas de Ecuaciones"> Métodos de solución de Sistemas de Ecuaciones. </a> <br> </li>
                             <ul class="subindice"> 
-                                <li> <a href="#Método de Eliminacion Gaussiana"> Método de Bisección. </a> </li>
-                                <li> <a href="#Método de Gauss Jordania"> Método de la Falsa Posición. </a> </li>
-                                <li> <a href="#Método de Gauss Seidel"> Método de la Secante. </a> </li> 
-                                <li> <a href="#Método Jacobi"> Método de Newton-Raphson. </a> </li> 
+                                <li> <a href="#Método de Eliminacion Gaussiana"> Método de Eliminacion Gaussiana. </a> </li>
+                                <li> <a href="#Método de Gauss Jordania"> Método de Gauss Jordania. </a> </li>
+                                <li> <a href="#Método de Gauss Seidel"> Método de de Gauss Seidel. </a> </li> 
+                                <li> <a href="#Método Jacobi"> Método de Jacobi. </a> </li> 
                             </ul>
                     </ul>
                 </nav>
