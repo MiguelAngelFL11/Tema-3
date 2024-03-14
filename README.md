@@ -51,22 +51,39 @@ En este documento vamos a ver sobre los distintos metodos los cuales son:
 
 <h2 align = "center"> <font font face = "forte"> <a name="Métodos de solución de Sistemas de Ecuaciones"> Métodos de solución de Sistemas de Ecuaciones  </front> </h2>
 
-<h2 align = "center"> <font font face = "forte">  1.1 Método de Eliminacion Gaussiana. </h2>
+<h3 align = "center"> <font font face = "forte">  1.1 Método de Eliminacion Gaussiana. </h3>
 
 <h3> <font font face = "arial"> Descripción:: </h3>
 
 El método de eliminación gaussiana es un algoritmo utilizado para resolver sistemas de ecuaciones lineales. Consiste en realizar una serie de operaciones elementales sobre las filas de una matriz aumentada que representa el sistema de ecuaciones, con el objetivo de convertirla en una forma escalonada o triangular superior. Una vez que la matriz está en esta forma, se puede resolver fácilmente el sistema mediante sustitución hacia atrás.
 
-<h3> <font font face = "arial">Pasos del Método de Bisección:</h3>
+<h3> <font font face = "arial">Pseudocódigo del Método de Bisección:</h3>
+  
+Input: Una matriz aumentada A de tamaño (n x n+1)
+Output: Las soluciones del sistema de ecuaciones
+
+Para k desde 1 hasta n-1:
+    Para i desde k+1 hasta n:
+        factor = A[i][k] / A[k][k]  # Calcula el factor de eliminación
+        Para j desde k hasta n+1:
+            A[i][j] = A[i][j] - factor * A[k][j]  # Realiza la eliminación
+
+# Resolución del sistema triangular superior
+Para i desde n hasta 1:
+    x[i] = A[i][n+1] / A[i][i]  # Sustitución hacia atrás
+    Para j desde i+1 hasta n:
+        x[i] = x[i] - A[i][j] * x[j] / A[i][i]
+
+Return x  # Devuelve las soluciones
 
 
 
-<h2 align = "center"> <font font face = "forte">  1.2 Método de Gauss Jordania. </h2>
+<h3 align = "center"> <font font face = "forte">  1.2 Método de Gauss Jordania. </h3>
 
 
-<h2 align = "center"> <font font face = "forte">  1.3 Método de Gauss Seidel. </h2>
+<h3 align = "center"> <font font face = "forte">  1.3 Método de Gauss Seidel. </h3>
 
 
-<h2 align = "center"> <font font face = "forte">  1.4 Método de Jacobi. </h2>
+<h3 align = "center"> <font font face = "forte">  1.4 Método de Jacobi. </h3>
 
 
