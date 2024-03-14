@@ -316,5 +316,110 @@ Return "No se alcanzó la convergencia después de max_iter iteraciones."
 }
 
 <h3 align = "center"> <font font face = "forte">  1.4 Método de Jacobi. </h3>
+  
+<h3> <font font face = "arial"> Descripción </h2>
+
+El método de Jacobi es otro algoritmo iterativo utilizado para resolver sistemas de ecuaciones lineales. Similar al método de Gauss-Seidel, el método de Jacobi también utiliza iteraciones para mejorar una aproximación inicial a la solución del sistema.
+
+<h3> <font font face = "arial">Pseudocódigo del Método de Método de Jacobi.</h3>
+  
+Input: Una matriz A de tamaño (n x n), un vector b de tamaño n, una aproximación inicial x^(0), un número máximo de iteraciones max_iter, y un criterio de convergencia tol.
+Output: La aproximación final x^(k) que resuelve el sistema Ax = b o un mensaje de error si no se alcanza la convergencia.
+
+Inicializar un vector x de tamaño n para almacenar la aproximación actual.
+Inicializar un vector x_prev de tamaño n para almacenar la aproximación anterior.
+Inicializar la variable iter para contar el número de iteraciones realizadas.
+Inicializar la variable error para almacenar el error relativo.
+
+Mientras iter < max_iter:
+    Para i desde 0 hasta n-1:
+        x_prev[i] = x[i]
+
+    Para i desde 0 hasta n-1:
+        suma = 0
+        Para j desde 0 hasta n-1:
+            Si j ≠ i:
+                suma += A[i][j] * x_prev[j]
+
+        x[i] = (1 / A[i][i]) * (b[i] - suma)
+
+    error = |x[0] - x_prev[0]|
+    Para i desde 1 hasta n-1:
+        error = max(error, |x[i] - x_prev[i]|)
+
+    Si error < tol:
+        Return x  # Se alcanzó la convergencia
+
+    iter += 1
+
+Return "No se alcanzó la convergencia después de max_iter iteraciones."
+
+
+<h3> <font font face = "arial">Ejemplo del Método de Jacobi en código.</h3>
+
+public class Jacobi {
+
+    public static double[] solve(double[][] A, double[] b, double[] x0, int maxIter, double tol) {
+        int n = A.length;
+        double[] x = new double[n];
+        double[] xPrev = new double[n];
+        double error = Double.MAX_VALUE;
+        int iter = 0;
+
+        while (iter < maxIter && error > tol) {
+            // Almacenar la aproximación anterior
+            System.arraycopy(x, 0, xPrev, 0, n);
+
+            // Calcular la nueva aproximación para cada componente de x
+            for (int i = 0; i < n; i++) {
+                double suma = 0;
+                for (int j = 0; j < n; j++) {
+                    if (j != i) {
+                        suma += A[i][j] * xPrev[j];
+                    }
+                }
+                x[i] = (1 / A[i][i]) * (b[i] - suma);
+            }
+
+            // Calcular el error relativo
+            error = Math.abs(x[0] - xPrev[0]);
+            for (int i = 1; i < n; i++) {
+                error = Math.max(error, Math.abs(x[i] - xPrev[i]));
+            }
+
+            iter++;
+        }
+
+        if (error <= tol) {
+            return x; // Se alcanzó la convergencia
+        } else {
+            System.out.println("No se alcanzó la convergencia después de " + maxIter + " iteraciones.");
+            return null;
+        }
+    }
+
+    public static void main(String[] args) {
+        double[][] A = {
+            {10, -1, 2},
+            {-1, 11, -1},
+            {2, -1, 10}
+        };
+        double[] b = {6, 25, -11};
+        double[] x0 = {0, 0, 0};
+        int maxIter = 1000;
+        double tol = 1e-6;
+
+        double[] soluciones = solve(A, b, x0, maxIter, tol);
+
+        if (soluciones != null) {
+            System.out.println("Soluciones:");
+            for (int i = 0; i < soluciones.length; i++) {
+                System.out.println("x[" + i + "] = " + soluciones[i]);
+            }
+        }
+    }
+}
+
+
 
 
