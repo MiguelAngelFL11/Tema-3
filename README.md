@@ -29,4 +29,10 @@
 
 <h3 align = "center"> <font  font face = "bauhaus 93">  <a name="Descripción"> Descripción</a> </font> </h3>
 
+En este documento vamos a ver sobre los distintos metodos los cuales son:
+                                <li> <a href="#Método de Eliminacion Gaussiana"> Método de Eliminacion Gaussiana. </a> </li>
+                                <li> <a href="#Método de Gauss Jordania"> Método de Gauss Jordania. </a> </li>
+                                <li> <a href="#Método de Gauss Seidel"> Método de de Gauss Seidel. </a> </li> 
+                                <li> <a href="#Método Jacobi"> Método de Jacobi. </a> </li> 
+
 
