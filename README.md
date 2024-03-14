@@ -12,10 +12,10 @@
                             </ul>
                       <li> <a href="#Métodos numéricos para encontrar las raíces de ecuaciones que se encuentran en nuestro repositorio"> Métodos numéricos para encontrar las raíces de ecuaciones que se encuentran en nuestro repositorio. </a> <br> </li>
                             <ul class="subindice"> 
-                                <li> <a href="#Método de Bisección"> Método de Bisección. </a> </li>
-                                <li> <a href="#Método de la Falsa Posición"> Método de la Falsa Posición. </a> </li>
-                                <li> <a href="#Método de la Secante"> Método de la Secante. </a> </li> 
-                                <li> <a href="#Método de Newton-Raphson"> Método de Newton-Raphson. </a> </li> 
+                                <li> <a href="#Método de Eliminacion Gaussiana"> Método de Bisección. </a> </li>
+                                <li> <a href="#Método de Gauss Jordania"> Método de la Falsa Posición. </a> </li>
+                                <li> <a href="#Método de Gauss Seidel"> Método de la Secante. </a> </li> 
+                                <li> <a href="#Método Jacobi"> Método de Newton-Raphson. </a> </li> 
                             </ul>
                     </ul>
                 </nav>
