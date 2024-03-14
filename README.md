@@ -35,7 +35,6 @@ En este documento vamos a ver sobre los distintos metodos los cuales son:
                                 <li>3.- Método de Gauss Seidel. </a> </li> 
                                 <li>4.- Método de Jacobi. </a> </li> 
 
-<h1 align = "center"> <font  font face = "bauhaus 93">  Métodos para enontrar las raíces de una ecuacion </font> </h1>
 
 <h3 align = "center"> <font font face = "forte"> <a name="Métodos de solución de Sistemas de Ecuaciones"> Métodos de solución de Sistemas de Ecuaciones  </front> </h3>
 
@@ -49,6 +48,8 @@ En este documento vamos a ver sobre los distintos metodos los cuales son:
   2.4 Método de Jacobi.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<h2 align = "center"> <font font face = "forte"> <a name="Métodos de solución de Sistemas de Ecuaciones"> Métodos de solución de Sistemas de Ecuaciones  </front> </h2>
 
 <h2 align = "center"> <font font face = "forte">  1. Bisección </h2>
 
