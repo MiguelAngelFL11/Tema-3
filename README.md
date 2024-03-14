@@ -64,13 +64,12 @@ Output: Las soluciones del sistema de ecuaciones
 
 Para k desde 1 hasta n-1:
     Para i desde k+1 hasta n:
-        factor = A[i][k] / A[k][k]  # Calcula el factor de eliminación
+        factor = A[i][k] / A[k][k]  
         Para j desde k hasta n+1:
             A[i][j] = A[i][j] - factor * A[k][j]  # Realiza la eliminación
 
-# Resolución del sistema triangular superior
 Para i desde n hasta 1:
-    x[i] = A[i][n+1] / A[i][i]  # Sustitución hacia atrás
+    x[i] = A[i][n+1] / A[i][i]  
     Para j desde i+1 hasta n:
         x[i] = x[i] - A[i][j] * x[j] / A[i][i]
 
