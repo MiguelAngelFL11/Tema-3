@@ -154,7 +154,54 @@ Para i desde 0 hasta n-1:
 Return soluciones
 
 
-<h3> <font font face = "arial">Ejemplo del Método de Gauss Jordania. en código.</h3>
+<h3> <font font face = "arial">Ejemplo del Método de Gauss Jordania en código.</h3>
+  
+public class GaussJordan {
+
+    public static double[] solve(double[][] A) {
+        int n = A.length;
+        double[] soluciones = new double[n];
+
+        // Eliminación hacia adelante
+        for (int k = 0; k < n; k++) {
+            for (int i = 0; i < n; i++) {
+                if (i != k) {
+                    double factor = A[i][k] / A[k][k];
+                    for (int j = k; j < n + 1; j++) {
+                        A[i][j] -= factor * A[k][j];
+                    }
+                }
+            }
+            // Normalización de la fila k
+            double factor = A[k][k];
+            for (int j = k; j < n + 1; j++) {
+                A[k][j] /= factor;
+            }
+        }
+
+        // Extracción de las soluciones
+        for (int i = 0; i < n; i++) {
+            soluciones[i] = A[i][n];
+        }
+
+        return soluciones;
+    }
+
+    public static void main(String[] args) {
+        double[][] A = {
+            {2, 3, -1, 1},
+            {4, 4, -3, 5},
+            {2, -1, 2, 7}
+        };
+
+        double[] soluciones = solve(A);
+
+        System.out.println("Soluciones:");
+        for (int i = 0; i < soluciones.length; i++) {
+            System.out.println("x[" + i + "] = " + soluciones[i]);
+        }
+    }
+}
 
 
 
