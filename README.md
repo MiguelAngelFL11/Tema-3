@@ -5,4 +5,4 @@
 <h3 align = "center"> <font color = "darkorange" size = "+5"  font face = "bauhaus 93">  INDICE </font> </h3>
 
 
-<h2 align = "center"> <font  font face = "bauhaus 93">  <a name="Descripción del Problemario"> Descripción del Problemario </a> </font> </h2>
+<h2 align = "center"> <font  font face = "bauhaus 93">Descripción del Problemario </a> </font> </h2>
